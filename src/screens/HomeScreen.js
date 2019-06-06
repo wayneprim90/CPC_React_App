@@ -21,13 +21,13 @@ class HomeScreen extends Component {
             justifyContent: "center"
         }}>
             <StatusBar backgroundColor="#eee" barStyle="dark-content"></StatusBar>
-            <Text>Hey</Text>
+            <Text>Home Screen</Text>
         </View>
         )
     }
 }
 
-
+  
 const HomeStack = createStackNavigator(
     {
         Home: HomeScreen
