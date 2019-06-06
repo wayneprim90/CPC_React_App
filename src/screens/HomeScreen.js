@@ -2,32 +2,23 @@ import React, { Component } from 'react';
 import { View, Text, Button, TouchableOpacity, StatusBar} from 'react-native';
 import Ionicons from "react-native-vector-icons/Ionicons";
 import {createStackNavigator} from 'react-navigation';
+import NavbarNotificationButton from '../components/NavbarNotificationButton';
 
-class HomeScreen extends Component {
-
-    state = {
-        counter : 0
-    }
-
+class HomeScreen extends Component{
     static navigationOptions = ({navigation}) => {
         return {
             headerRight: (
-                <TouchableOpacity onPress={navigation.getParam('incrementCount')}>
-                    <Ionicons style={{paddingLeft: 20, paddingRight: 20 }} name="ios-notifications-outline" size={25} />
-                </TouchableOpacity> 
+                <NavbarNotificationButton />
             )
         }
-        
-    }
+    } 
 
     componentDidMount() {
-        this.props.navigation.setParams({ incrementCount : this._incrementCount }) 
+        this.props.navigation.setParams({ navButtonClickHandler : this._navButtonClickHandler })
     }
-    
-    _incrementCount = () => {
-        this.setState({
-            counter: this.state.counter + 1
-        })
+
+    _navButtonClickHandler = () => { 
+        alert("Clicked");
     }
 
     render() {
@@ -38,7 +29,7 @@ class HomeScreen extends Component {
             justifyContent: "center"
         }}>
             <StatusBar backgroundColor="#eee" barStyle="dark-content"></StatusBar>
-            <Text>Count: {this.state.counter}</Text>
+            <Text>Home Screen</Text>
         </View>
         )
     }
@@ -51,9 +42,7 @@ const HomeStack = createStackNavigator(
     },
     {
         defaultNavigationOptions: {
-            headerStyle: {
-                // elevation: Platform.OS == "android" ? 0 : "default"
-            }
+
         }
     }
 )

@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import {createStackNavigator} from 'react-navigation';
+import NavbarNotificationButton from '../components/NavbarNotificationButton';
 
 
 class EventsScreen extends Component {
-    static navigationOptions = {
-        title: "Events"
+    static navigationOptions = ({navigation}) => {
+        return {
+            headerRight: (
+                <NavbarNotificationButton />
+            )
+        }
     }
+    
     render() {
         return (
         <View style={{
@@ -14,7 +20,7 @@ class EventsScreen extends Component {
             alignItems: "center",
             justifyContent: "center"
         }}>
-            <Text>Hey</Text>
+            <Text>Events Screen</Text>
         </View>
         )
     }
@@ -24,13 +30,6 @@ class EventsScreen extends Component {
 const EventsStack = createStackNavigator(
     {
         Events: EventsScreen
-    },
-    {
-        defaultNavigationOptions: {
-            headerStyle: {
-                // elevation: Platform.OS == "android" ? 0 : "default"
-            }
-        }
     }
 )
 

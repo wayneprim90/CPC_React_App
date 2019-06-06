@@ -3,9 +3,7 @@ import { View, Text, Platform} from 'react-native';
 import {createStackNavigator} from 'react-navigation';
 
 class InformationScreen extends Component {
-    static navigationOptions = {
-        title : "Information"
-    }
+
     render() {
         return (
         <View style={{
@@ -23,13 +21,6 @@ class InformationScreen extends Component {
 const InformationStack = createStackNavigator(
     {
         Information: InformationScreen
-    },
-    {
-        defaultNavigationOptions: {
-            headerStyle: {
-                // elevation: Platform.OS == "android" ? 0 : "default"
-            }
-        }
     }
 )
 

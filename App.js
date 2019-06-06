@@ -9,7 +9,7 @@ import EventsScreen from "./src/screens/EventsScreen";
 import InformationScreen from './src/screens/InformationScreen';
 
 
-const MainAppNavigator = createBottomTabNavigator(
+const App = createBottomTabNavigator(
   { 
     Home: HomeScreen,
     Events: EventsScreen, 
@@ -36,8 +36,8 @@ const MainAppNavigator = createBottomTabNavigator(
       }
     }),
     tabBarOptions: {
-      activeTintColor: "#2DC7E5",
-      inactiveTintColor: "#eef0f0",
+      activeTintColor: "#ffffff",
+      inactiveTintColor: "#999999",
       style: {
         backgroundColor: "#01255D"
       }
@@ -46,4 +46,4 @@ const MainAppNavigator = createBottomTabNavigator(
 )
 
 
-export default createAppContainer(MainAppNavigator);
+export default createAppContainer(App);
