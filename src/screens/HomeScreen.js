@@ -4,15 +4,32 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import {createStackNavigator} from 'react-navigation';
 
 class HomeScreen extends Component {
-    static navigationOptions = {
-        title : "Feed",
-        headerRight: (
-            <TouchableOpacity onPress={() => alert('This is a button!')}>
-                <Ionicons style={{paddingLeft: 20, paddingRight: 20 }} name="ios-notifications-outline" size={25} />
-            </TouchableOpacity>
-        )
+
+    state = {
+        counter : 0
+    }
+
+    static navigationOptions = ({navigation}) => {
+        return {
+            headerRight: (
+                <TouchableOpacity onPress={navigation.getParam('incrementCount')}>
+                    <Ionicons style={{paddingLeft: 20, paddingRight: 20 }} name="ios-notifications-outline" size={25} />
+                </TouchableOpacity> 
+            )
+        }
         
     }
+
+    componentDidMount() {
+        this.props.navigation.setParams({ incrementCount : this._incrementCount }) 
+    }
+    
+    _incrementCount = () => {
+        this.setState({
+            counter: this.state.counter + 1
+        })
+    }
+
     render() {
         return (
         <View style={{
@@ -21,7 +38,7 @@ class HomeScreen extends Component {
             justifyContent: "center"
         }}>
             <StatusBar backgroundColor="#eee" barStyle="dark-content"></StatusBar>
-            <Text>Hey</Text>
+            <Text>Count: {this.state.counter}</Text>
         </View>
         )
     }

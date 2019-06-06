@@ -24,11 +24,11 @@ const MainAppNavigator = createBottomTabNavigator(
         let iconName;
 
         if (routeName === 'Home') { 
-          iconName = 'ios-home';
+          iconName = 'ios-apps';
         } else if (routeName === 'Events') {
           iconName = `ios-calendar`;
         } else if (routeName === "Information") {
-          iconName = 'ios-options' 
+          iconName = 'ios-information-circle-outline' 
         }
 
         // You can return any component that you like here!
