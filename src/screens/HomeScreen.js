@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { View, Text, Button, TouchableOpacity, StatusBar} from 'react-native';
+import { Text, SafeAreaView, StatusBar} from 'react-native';
 import Ionicons from "react-native-vector-icons/Ionicons";
 import {createStackNavigator} from 'react-navigation';
 import NavbarNotificationButton from '../components/NavbarNotificationButton';
 
 class HomeScreen extends Component{
-    static navigationOptions = ({navigation}) => {
+    static navigaotionOptions = ({navigation}) => {
         return {
             headerRight: (
                 <NavbarNotificationButton />
@@ -23,14 +23,14 @@ class HomeScreen extends Component{
 
     render() {
         return (
-        <View style={{
+        <SafeAreaView style={{
             flex: 1, 
             alignItems: "center",
             justifyContent: "center"
         }}>
             <StatusBar backgroundColor="#eee" barStyle="dark-content"></StatusBar>
             <Text>Home Screen</Text>
-        </View>
+        </SafeAreaView>
         )
     }
 }
