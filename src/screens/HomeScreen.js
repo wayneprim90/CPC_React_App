@@ -38,11 +38,7 @@ class HomeScreen extends Component {
             justifyContent: "center"
         }}>
             <StatusBar backgroundColor="#eee" barStyle="dark-content"></StatusBar>
-<<<<<<< HEAD
             <Text>Count: {this.state.counter}</Text>
-=======
-            <Text>Home Screen</Text>
->>>>>>> e2eec9700d45d1f7d159ed26e32fd53273481732
         </View>
         )
     }
