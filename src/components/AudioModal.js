@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, Text, View, Button } from 'react-native';
-import { SafeAreaView } from 'react-navigation';
+import { Modal, Text, View, Button, SafeAreaView } from 'react-native';
 
 class AudioModal extends Component {
     render() {
