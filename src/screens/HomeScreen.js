@@ -6,10 +6,6 @@ import { createStackNavigator } from 'react-navigation';
 
 class HomeScreen extends Component{
 
-    static navigationOptions = {
-        title: "Home"
-    }
-
     constructor(props) {
         super(props);
         this.state = {

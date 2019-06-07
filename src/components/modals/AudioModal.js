@@ -5,6 +5,7 @@ import FeatherIconComponent from "react-native-vector-icons/Feather";
 import Slider from "@react-native-community/slider";
 import Video from "react-native-video";
 
+
 class AudioModal extends Component {
 
     constructor(props) {
