@@ -17,7 +17,7 @@ class AudioModal extends Component {
         return (
             <Modal animationType="slide" visible={this.props.modalVisible}>
                 <SafeAreaView style={{flex: 1, backgroundColor: "#000"}}>
-                    <View style={{ height: 95, width: "100%", alignItems: "center", backgroundColor: "#111", justifyContent: "space-between", flexDirection: "row"}}>
+                    <View style={{ height: 95, width: "100%", alignItems: "center", backgroundColor: "#000", justifyContent: "space-between", flexDirection: "row"}}>
                         <View style={{ width: "20%"}}>
                             { this.state.audioObject ? <EvilIconComponent name="share-apple" size={30} style={{textAlign: "center", color: "#fff"}} /> : null }
                         </View>
