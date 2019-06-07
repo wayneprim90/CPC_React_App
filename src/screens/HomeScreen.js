@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Text, StatusBar} from 'react-native';
-import {createStackNavigator, SafeAreaView } from 'react-navigation';
+import { Text, StatusBar, SafeAreaView} from 'react-native';
+import {createStackNavigator } from 'react-navigation';
 import NavbarNotificationButton from '../components/NavbarNotificationButton';
 import AudioModal from "../components/AudioModal";
 
