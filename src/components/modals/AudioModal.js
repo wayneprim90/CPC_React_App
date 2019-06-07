@@ -7,10 +7,13 @@ import Video from "react-native-video";
 
 class AudioModal extends Component {
 
-    state = {
-        audioPaused: false,
-        currentTime: 0,
-        maxTime: 0
+    constructor(props) {
+        super(props);
+        state = {
+            audioPaused: false,
+            currentTime: 0,
+            maxTime: 0
+        }
     }
 
     
