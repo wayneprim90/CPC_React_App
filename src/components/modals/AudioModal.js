@@ -24,7 +24,7 @@ class AudioModal extends Component {
                         <View style={{ width: "20%"}}>
                             { this.state.audioObject ? <FeatherIconComponent name="share" size={25} style={{textAlign: "center", color: "#fff"}} /> : null }
                         </View>
-                        <Text style={{ width: "60%", textAlign: "center", color: "#fff", fontSize: 16, fontWeight: "bold" }}>
+                        <Text style={{ width: "60%", textAlign: "center", color: "#fff", fontSize: 15, fontWeight: "bold" }}>
                             {this.state.audioObject ? this.state.audioObject.title : "No Audio :("}
                         </Text> 
                         <TouchableOpacity onPress={this.props.close} style={{ width: "20%" }}>
@@ -33,7 +33,7 @@ class AudioModal extends Component {
                     </View>
                     
                     <View style={{width: "100%", alignItems: "center", justifyContent: "flex-start"}}>
-                        <Image style={{ height: (Dimensions.get('window').width * .8) }} source={require("../../assets/images/album-image.png")} resizeMode="contain" />
+                        <Image style={{ height: (Dimensions.get('window').width * .8), borderRadius: 10 }} source={require("../../assets/images/album-image.png")} resizeMode="contain" />
                     </View>
 
                     <View style={{ width: "100%", height: 200 }} >
