@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, Text, View, TouchableOpacity, StatusBar} from 'react-native';
+import { Modal, Text, View, TouchableOpacity, StatusBar, Image, Dimensions} from 'react-native';
 import { SafeAreaView } from 'react-navigation';
 import FeatherIconComponent from "react-native-vector-icons/Feather";
 
@@ -16,8 +16,8 @@ class AudioModal extends Component {
     render() {
         return (
             <Modal animationType="slide" visible={this.props.modalVisible}>
-                <StatusBar barStyle="light-content"/>
-                <SafeAreaView style={{flex: 1, backgroundColor: "#000", justifyContent: "flex-start", alignItems: "center"}}>
+                <StatusBar backgroundColor="#000" barStyle="light-content"/>
+                <SafeAreaView style={{flex: 1, backgroundColor: "#000", flexDirection: "column", justifyContent: "space-between", alignItems: "center"}}>
 
                     {/* Header */}
                     <View style={{ height: 95, width: "100%", alignItems: "center", backgroundColor: "#000", justifyContent: "space-between", flexDirection: "row"}}>
@@ -31,12 +31,12 @@ class AudioModal extends Component {
                             <FeatherIconComponent name="chevron-down" size={25} style={{ textAlign: "center", color: "#fff"}} /> 
                         </TouchableOpacity>
                     </View>
+                    
+                    <View style={{width: "100%", alignItems: "center", justifyContent: "flex-start"}}>
+                        <Image style={{ height: (Dimensions.get('window').width * .8) }} source={require("../../assets/images/album-image.png")} resizeMode="contain" />
+                    </View>
 
-                    {/* Album Artwork */}
-                    <View style={{ width: 250, height: 250, backgroundColor: "#444", marginTop: 20}}></View>
-
-                    {/* Controls */}
-                    <View> 
+                    <View style={{ width: "100%", height: 200 }} >
 
                     </View>
 
