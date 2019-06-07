@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
-import { Text, SafeAreaView, StatusBar} from 'react-native';
-import Ionicons from "react-native-vector-icons/Ionicons";
-import {createStackNavigator} from 'react-navigation';
+import { Text, StatusBar} from 'react-native';
+import {createStackNavigator, SafeAreaView } from 'react-navigation';
 import NavbarNotificationButton from '../components/NavbarNotificationButton';
+import AudioModal from "../components/AudioModal";
 
 class HomeScreen extends Component{
-    static navigaotionOptions = ({navigation}) => {
+
+    state = {
+        modalVisible: false
+    }
+
+    static navigationOptions = ({navigation}) => {
         return {
             headerRight: (
-                <NavbarNotificationButton />
+                <NavbarNotificationButton click={navigation.getParam("navButtonClickHandler")}/>
             )
         }
     } 
@@ -18,16 +23,19 @@ class HomeScreen extends Component{
     }
 
     _navButtonClickHandler = () => { 
-        alert("Clicked");
+        this.toggleModal()
+    }
+
+    toggleModal = () => {
+        this.setState({
+            modalVisible: !this.state.modalVisible
+        })
     }
 
     render() {
         return (
-        <SafeAreaView style={{
-            flex: 1, 
-            alignItems: "center",
-            justifyContent: "center"
-        }}>
+        <SafeAreaView style={{ flex: 1, alignItems: "center",justifyContent: "center" }}>
+            <AudioModal close={this.toggleModal} modalVisible={this.state.modalVisible} />
             <StatusBar backgroundColor="#eee" barStyle="dark-content"></StatusBar>
             <Text>Home Screen</Text>
         </SafeAreaView>
