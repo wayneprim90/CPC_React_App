@@ -58,6 +58,7 @@
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
 		F79BFC51643148DAA235F13B /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9220C79C3C2449484EAA643 /* MaterialCommunityIcons.ttf */; };
+		860FC66CDB4846CA819FBE04 /* libRNCSlider.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D2F005EAFA4531AD1A1F9F /* libRNCSlider.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -414,6 +415,8 @@
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F1BD50C4B55A4F8F817A1741 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		FC49606DB4714343807D81E3 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		A519F3C047734E569F7077D6 /* RNCSlider.xcodeproj */ = {isa = PBXFileReference; name = "RNCSlider.xcodeproj"; path = "../node_modules/@react-native-community/slider/ios/RNCSlider.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		B6D2F005EAFA4531AD1A1F9F /* libRNCSlider.a */ = {isa = PBXFileReference; name = "libRNCSlider.a"; path = "libRNCSlider.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -444,6 +447,7 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				5036D4538736417283CC184A /* libRNGestureHandler.a in Frameworks */,
 				60B6C053273046A789B0D82C /* libRNVectorIcons.a in Frameworks */,
+				860FC66CDB4846CA819FBE04 /* libRNCSlider.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,6 +641,7 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				A1A820893EEF470EA9092CC4 /* RNGestureHandler.xcodeproj */,
 				9C4435BAE4B647D3A860BC22 /* RNVectorIcons.xcodeproj */,
+				A519F3C047734E569F7077D6 /* RNCSlider.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1365,12 +1370,14 @@
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-gesture-handlerios/**",
 					"$(SRCROOT)..\node_modules\neact-native-vector-iconsRNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\@react-native-community\slider\ios",
 				);
 				INFOPLIST_FILE = CPCTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1395,12 +1402,14 @@
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-gesture-handlerios/**",
 					"$(SRCROOT)..\node_modules\neact-native-vector-iconsRNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\@react-native-community\slider\ios",
 				);
 				INFOPLIST_FILE = CPCTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1429,6 +1438,7 @@
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-gesture-handlerios/**",
 					"$(SRCROOT)..\node_modules\neact-native-vector-iconsRNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\@react-native-community\slider\ios",
 				);
 				INFOPLIST_FILE = CPC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1457,6 +1467,7 @@
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-gesture-handlerios/**",
 					"$(SRCROOT)..\node_modules\neact-native-vector-iconsRNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\@react-native-community\slider\ios",
 				);
 				INFOPLIST_FILE = CPC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1489,11 +1500,13 @@
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-gesture-handlerios/**",
 					"$(SRCROOT)..\node_modules\neact-native-vector-iconsRNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\@react-native-community\slider\ios",
 				);
 				INFOPLIST_FILE = "CPC-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1527,11 +1540,13 @@
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-gesture-handlerios/**",
 					"$(SRCROOT)..\node_modules\neact-native-vector-iconsRNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\@react-native-community\slider\ios",
 				);
 				INFOPLIST_FILE = "CPC-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1564,11 +1579,13 @@
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-gesture-handlerios/**",
 					"$(SRCROOT)..\node_modules\neact-native-vector-iconsRNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\@react-native-community\slider\ios",
 				);
 				INFOPLIST_FILE = "CPC-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1601,11 +1618,13 @@
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-gesture-handlerios/**",
 					"$(SRCROOT)..\node_modules\neact-native-vector-iconsRNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\@react-native-community\slider\ios",
 				);
 				INFOPLIST_FILE = "CPC-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
