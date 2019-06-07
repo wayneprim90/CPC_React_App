@@ -4,6 +4,7 @@ import FeatherIconComponent from "react-native-vector-icons/Feather";
 import AudioModal from '../modals/AudioModal';
 
 class NavbarAudioModalButton extends React.Component {
+    
     state = {
         modalVisible: false
     }
