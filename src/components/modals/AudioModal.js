@@ -20,7 +20,7 @@ class AudioModal extends Component {
                 <SafeAreaView style={{flex: 1, backgroundColor: "#000", flexDirection: "column", justifyContent: "space-between", alignItems: "center"}}>
 
                     {/* Header */}
-                    <View style={{ height: 95, width: "100%", alignItems: "center", backgroundColor: "#000", justifyContent: "space-between", flexDirection: "row"}}>
+                    <View style={{ height: 44, width: "100%", alignItems: "center", backgroundColor: "#000", justifyContent: "space-between", flexDirection: "row"}}>
                         <View style={{ width: "20%"}}>
                             { this.state.audioObject ? <FeatherIconComponent name="share" size={25} style={{textAlign: "center", color: "#fff"}} /> : null }
                         </View>
