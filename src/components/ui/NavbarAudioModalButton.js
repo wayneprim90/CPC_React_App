@@ -1,6 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, View} from 'react-native';
-import IoniconComponent from "react-native-vector-icons/Ionicons";
+import FeatherIconComponent from "react-native-vector-icons/Feather";
 import AudioModal from '../modals/AudioModal';
 
 class NavbarAudioModalButton extends React.Component {
@@ -19,7 +19,7 @@ class NavbarAudioModalButton extends React.Component {
             <View>
                 <AudioModal close={this.toggleAudioModal} modalVisible={this.state.modalVisible} />
                 <TouchableOpacity style={{paddingLeft: 20, paddingRight: 20}} onPress={this.toggleAudioModal}>
-                    <IoniconComponent name="ios-mic" size={25} />
+                    <FeatherIconComponent name="mic" size={20} />
                 </TouchableOpacity>
             </View>
         )

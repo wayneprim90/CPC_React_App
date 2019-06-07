@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { createAppContainer, createBottomTabNavigator, createStackNavigator} from "react-navigation";
-import Ionicons from "react-native-vector-icons/Ionicons";
+import FeatherIconComponent from "react-native-vector-icons/Feather";
 
 // Screens
 import HomeScreen from "./src/screens/HomeScreen";
@@ -20,19 +20,18 @@ const App = createBottomTabNavigator(
       tabBarIcon: ({focused, tintColor, horizontal}) => {
 
         const { routeName } = navigation.state;
-        let IconComponent = Ionicons;
         let iconName;
 
         if (routeName === 'Home') { 
-          iconName = 'ios-apps';
+          iconName = 'home';
         } else if (routeName === 'Events') {
-          iconName = `ios-calendar`;
+          iconName = `calendar`;
         } else if (routeName === "Information") {
-          iconName = 'ios-information-circle-outline' 
+          iconName = 'info' 
         }
 
         // You can return any component that you like here!
-        return <IconComponent name={iconName} size={25} color={tintColor} />; 
+        return <FeatherIconComponent name={iconName} size={20} color={tintColor} />; 
       }
     }),
     tabBarOptions: {
