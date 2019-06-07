@@ -8,7 +8,7 @@ class AudioModal extends Component {
 
     state = {
         audioObject : {
-            title: "Super Long Sermon Title", 
+            title: "Super Long Sermon Title that will overlap", 
             date: "05-05-2019"
         }
     }
