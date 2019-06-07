@@ -11,14 +11,38 @@ class AudioModal extends Component {
             title: "The Model Prayer", 
             date: "05-05-2019"
         },
-        playing: false
+        playing: false,
+        timer: {
+            current: 20
+        }
     }
 
-    playButtonPressed = () => {
+    playToggle = () => {
         this.setState({
             playing: !this.state.playing
         })
     }
+
+    backwardFifteen = () => {
+        this.setState({
+            timer: {
+                current: this.state.timer.current - 15
+            }
+        })
+    }
+
+    forwardFifteen = () => {
+        this.setState({
+            timer: {
+                current: this.state.timer.current + 15
+            }
+        })
+    }
+
+    sliderStarted = () => {
+        alert("Slider Started")
+    }
+
 
     render() {
         return (
@@ -46,22 +70,28 @@ class AudioModal extends Component {
                     <View style={{width: "100%", height: 200, flexDirection: "column", justifyContent: "flex-start", alignItems: "center"}}>
                         <Text style={{color: "#fff", textAlign: "center", fontSize: 18, fontWeight: "bold", marginBottom: 20}}> { this.state.audioObject.title }</Text>
                         <Slider
-                            style={{width: "80%", height: 40}}
+                            style={{width: "80%", height: 40, marginBottom: 10}}
                             minimumValue={0}
-                            maximumValue={60}
+                            maximumValue={100}
+                            value={this.state.timer.current}
                             minimumTrackTintColor="#FFFFFF"
                             maximumTrackTintColor="#ffffff"
+                            onSlidingStart={this.sliderStarted}
                         />
                         <View style={{width: "70%", height: 50, flexDirection: "row", justifyContent: "space-between", alignItems: "center"}}>
-                            <FeatherIconComponent name="skip-back" size={25} style={{color: "#fff" }} />
-                            <TouchableOpacity onPress={this.playButtonPressed}>
+                            <TouchableOpacity style={{paddingLeft: 20, paddingRight: 20}} onPress={this.backwardFifteen}>
+                                <FeatherIconComponent name="skip-back" size={25} style={{color: "#fff" }} />
+                            </TouchableOpacity>
+                            <TouchableOpacity style={{paddingLeft: 20, paddingRight: 20}} onPress={this.playToggle}>
                                 { 
                                     !this.state.playing ? 
                                     <FeatherIconComponent name="play" size={25} style={{color: "#fff" }} /> :
                                     <FeatherIconComponent name="pause" size={25} style={{color: "#fff" }} />
                                 }
                             </TouchableOpacity>
-                            <FeatherIconComponent name="skip-forward" size={25} style={{color: "#fff" }} />
+                            <TouchableOpacity style={{paddingLeft: 20, paddingRight: 20}} onPress={this.forwardFifteen}>
+                                <FeatherIconComponent name="skip-forward" size={25} style={{color: "#fff" }} />
+                            </TouchableOpacity>
                         </View>
                     </View>
 
