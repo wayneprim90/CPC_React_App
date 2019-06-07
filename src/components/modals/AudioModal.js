@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, Text, View, TouchableOpacity} from 'react-native';
+import { Modal, Text, View, TouchableOpacity, StatusBar} from 'react-native';
 import { SafeAreaView } from 'react-navigation';
 import FeatherIconComponent from "react-native-vector-icons/Feather";
 
@@ -16,6 +16,7 @@ class AudioModal extends Component {
     render() {
         return (
             <Modal animationType="slide" visible={this.props.modalVisible}>
+                <StatusBar barStyle="light-content"/>
                 <SafeAreaView style={{flex: 1, backgroundColor: "#000", justifyContent: "flex-start", alignItems: "center"}}>
 
                     {/* Header */}
