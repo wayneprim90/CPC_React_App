@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import {createStackNavigator} from 'react-navigation';
-import NavbarNotificationButton from '../components/NavbarNotificationButton';
+import NavbarAudioModalButton from '../components/ui/NavbarAudioModalButton';
 
 
 class EventsScreen extends Component {
+
     static navigationOptions = ({navigation}) => {
         return {
             headerRight: (
-                <NavbarNotificationButton />
+                <NavbarAudioModalButton />
             )
         }
     }
-    
+
     render() {
         return (
         <View style={{
