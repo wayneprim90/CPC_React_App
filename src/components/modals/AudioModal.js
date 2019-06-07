@@ -9,7 +9,8 @@ class AudioModal extends Component {
 
     constructor(props) {
         super(props);
-        state = {
+
+        this.state = {
             audioPaused: false,
             currentTime: 0,
             maxTime: 0
@@ -93,11 +94,7 @@ class AudioModal extends Component {
                         />
                         <View style={{width: "70%", height: 50, flexDirection: "row", justifyContent: "center", alignItems: "center"}}>
                             <TouchableOpacity style={{paddingLeft: 20, paddingRight: 20}} onPress={this.togglePlay}>
-                                { 
-                                    this.state.audioPaused ? 
-                                    <FeatherIconComponent name="play" size={25} style={{color: "#fff" }} /> :
-                                    <FeatherIconComponent name="pause" size={25} style={{color: "#fff" }} />
-                                }
+                                { this.state.audioPaused ?  <FeatherIconComponent name="play" size={25} style={{color: "#fff" }} /> :  <FeatherIconComponent name="pause" size={25} style={{color: "#fff" }} /> }
                             </TouchableOpacity>
                         </View>
                     </View>
